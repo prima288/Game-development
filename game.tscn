@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://12p0duvaqav7"]
+
+[ext_resource type="PackedScene" uid="uid://dpvek45euya01" path="res://prima1.tscn" id="1_8wrhw"]
+[ext_resource type="PackedScene" uid="uid://btkhexv2ymxb0" path="res://wolf.tscn" id="2_fxdi7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_8wrhw")]
+position = Vector2(13, 120)
+
+[node name="Sprite2D" parent="Node2D" instance=ExtResource("2_fxdi7")]
+position = Vector2(267, 258)
