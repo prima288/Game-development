@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://w822ignvgryw"]
+
+[ext_resource type="Texture2D" uid="uid://crrmmbu8k46tl" path="res://asset/enemy/enemy.png" id="1_s8nev"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_xj80q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le64u"]
+size = Vector2(24, 16)
+
+[sub_resource type="Animation" id="Animation_46xhv"]
+resource_name = "jalan"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_wsohb"]
+resource_name = "diam"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4, 3, 3.6, 4.2, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 6, 7, 6, 7, 6, 7, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmsjn"]
+_data = {
+"diam": SubResource("Animation_wsohb"),
+"jalan": SubResource("Animation_46xhv")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_xj80q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(266, 123)
+texture = ExtResource("1_s8nev")
+hframes = 8
+frame = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(266, 123)
+shape = SubResource("RectangleShape2D_le64u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cmsjn")
+}
+
+[node name="kiri" type="RayCast2D" parent="."]
+position = Vector2(254, 117)
+
+[node name="tengah" type="RayCast2D" parent="."]
+position = Vector2(266, 123)
+
+[node name="kanan" type="RayCast2D" parent="."]
+position = Vector2(278, 117)

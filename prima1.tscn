@@ -78,6 +78,3 @@ shape = SubResource("RectangleShape2D_3yofd")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2(179.75, 394)
 shape = SubResource("RectangleShape2D_8322t")
-
-[node name="TileMap2" type="TileMap" parent="."]
-format = 2

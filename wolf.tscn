@@ -117,23 +117,24 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nu084"]
-size = Vector2(115, 58)
+size = Vector2(102, 78)
 
 [node name="Sprite2D" type="CharacterBody2D"]
-position = Vector2(487, 265)
+position = Vector2(747, 212)
 scale = Vector2(0.495057, 0.474102)
 script = ExtResource("1_1segv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-358.757, 191.537)
-scale = Vector2(0.622539, 0.726871)
+position = Vector2(-367.635, 185.614)
+scale = Vector2(0.492964, 0.626629)
 sprite_frames = SubResource("SpriteFrames_03dgc")
 animation = &"Kiri"
 
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+position = Vector2(45.0735, 80.7843)
+scale = Vector2(2.02854, 1.59584)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-372.896, 256.924)
+position = Vector2(-377.734, 291.077)
 scale = Vector2(2.01997, 2.10925)
 shape = SubResource("RectangleShape2D_nu084")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(176.535, 113.495)

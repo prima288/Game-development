@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://12p0duvaqav7"]
+[gd_scene load_steps=5 format=3 uid="uid://12p0duvaqav7"]
 
 [ext_resource type="PackedScene" uid="uid://dpvek45euya01" path="res://prima1.tscn" id="1_8wrhw"]
+[ext_resource type="PackedScene" uid="uid://c8y6230n7t8ho" path="res://parallax s1.tscn" id="1_en0wj"]
 [ext_resource type="PackedScene" uid="uid://btkhexv2ymxb0" path="res://wolf.tscn" id="2_fxdi7"]
+[ext_resource type="PackedScene" uid="uid://w822ignvgryw" path="res://character_body_2d.tscn" id="3_h8jck"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(9, -3)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_en0wj")]
 
 [node name="Node2D" parent="." instance=ExtResource("1_8wrhw")]
-position = Vector2(13, 120)
+position = Vector2(-16, -23)
 
-[node name="Sprite2D" parent="Node2D" instance=ExtResource("2_fxdi7")]
-position = Vector2(267, 258)
+[node name="CharacterBody2D" parent="Node2D" instance=ExtResource("3_h8jck")]
+position = Vector2(7, 280)
+
+[node name="Sprite2D" parent="." instance=ExtResource("2_fxdi7")]
+position = Vector2(741, 217)
